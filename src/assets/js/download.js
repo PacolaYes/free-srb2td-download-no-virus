@@ -10,7 +10,7 @@ async function wikipediaProxy(location) {
         return null
     }
 
-    const wikipediaProxyRequestThatIsVeryCoolAndAwesome = await fetch("https://poopfart.pacola444.workers.dev/", {headers: {"X-Pawsword": location}})
+    const wikipediaProxyRequestThatIsVeryCoolAndAwesome = await fetch("https://poopfart.pacola444.workers.dev/", {headers: {"X-Pawsword": location, "Content-Type": "application/json",}})
 
     if (wikipediaProxyRequestThatIsVeryCoolAndAwesome.status == 200) {
         const data = await wikipediaProxyRequestThatIsVeryCoolAndAwesome.json()
@@ -25,7 +25,7 @@ async function downloadClick() {
     const page = params.get("page")
     
     const info = await wikipediaProxy(page)
-    if (info !== null && info.get("link")) // if we got a proper wikipedia link
+    if (info !== null && info["link"]) // if we got a proper wikipedia link
         window.location.href = info["link"] // go to it :P
     else if (info === null) {
         alert("no download functionality yet")
