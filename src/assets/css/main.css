@@ -1,6 +1,17 @@
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    margin-top: .7em;
+    padding-top: .7em;
+
+    cursor: url('../img/cursor/evil\ normal.cur'), auto;
 
     color: white;
     background-color: #100c08;
@@ -11,14 +22,43 @@ body {
         "BNCE" -70,
         "INFM" 100,
         "SPAC" 2;
+    
+    width: 100%;
+    height: 100%;
 }
 
 a {
+    cursor: url('../img/cursor/evil\ link.cur'), auto;
+
+    text-decoration: none;
     color: #1e90ff;
+    transition:
+        font-weight .3s,
+        color .3s,
+        transform .3s;
+}
+
+a:hover {
+    color: #6bb5ff;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+a > img {
+    transition: transform .3s;
+}
+
+a:hover > img {
+    transform: scale(1.05);
+}
+
+*[thin] {
+    font-weight: lighter;
 }
 
 header {
-    padding: 0;
+    margin-bottom: 8em;
+
     background-color: #ae0c00;
     display: flex;
 
