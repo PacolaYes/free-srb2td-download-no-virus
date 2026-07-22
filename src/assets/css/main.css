@@ -1,4 +1,13 @@
 
+:root {
+    --text-color: #faf0e6;
+    --bg-color: #100c08;
+    --main-color: #ae0c00;
+
+    --normal-cursor: url('../img/cursor/evil\ normal.cur');
+    --link-cursor: url('../img/cursor/evil\ link.cur');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -11,10 +20,10 @@ html {
 body {
     padding-top: .7em;
 
-    cursor: url('../img/cursor/evil\ normal.cur'), auto;
+    cursor: var(--normal-cursor), auto;
 
-    color: #faf0e6;
-    background-color: #100c08;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 
     font-family: "Shantell Sans", cursive;
     font-size: 18px;
@@ -28,7 +37,7 @@ body {
 }
 
 a {
-    cursor: url('../img/cursor/evil\ link.cur'), auto;
+    cursor: var(--link-cursor), auto;
 
     text-decoration: none;
     color: #1e90ff;
@@ -59,7 +68,7 @@ a:hover > img {
 header {
     margin-bottom: 8em;
 
-    background-color: #ae0c00;
+    background-color: var(--main-color);
     display: flex;
 
     flex-flow: row wrap;
@@ -80,5 +89,64 @@ header > nav {
 }
 
 main {
-    margin: 2em;
+    margin: 2em 4em;
+}
+
+.mod-title {
+    display: flex;
+    align-items: top;
+    flex-flow: row wrap;
+}
+
+.mod-title > img {
+    margin-inline: 1em;
+    margin-bottom: 2em;
+    height: 72px;
+}
+
+#mod-title-Title {
+    margin: 0;
+    margin-bottom: .2em;
+}
+
+.mod-title-info > p {
+    font-size: small;
+    display: inline-block;
+    margin: 0;
+}
+
+.mod-title-info > p:not(:last-child) {
+    padding-right: 1em;
+    border-right: 1px solid var(--main-color);
+}
+
+.mod-title-info > p:not(:first-child) {
+    padding-left: .5em;
+}
+
+.mod-review {
+    margin: 2em 0;
+}
+
+.mod-review em {
+    color: #c9c0bb;
+    font-size: 1.25em
+}
+
+button:not([disabled]) {
+    cursor: var(--link-cursor), auto;
+}
+
+button[disabled] {
+    cursor: var(--normal-cursor), auto;
+}
+
+#download-button {
+    overflow: hidden;
+
+    background: transparent;
+    border: 0;
+
+    padding: 0;
+    border-radius: 1em;
 }
