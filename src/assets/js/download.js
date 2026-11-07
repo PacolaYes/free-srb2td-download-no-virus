@@ -28,6 +28,6 @@ async function downloadClick() {
     if (info !== null && info["link"]) // if we got a proper wikipedia link
         window.location.href = info["link"] // go to it :P
     else if (info === null) {
-        alert("no download functionality yet")
+        window.location.href = "https://www.youtube.com/watch?v=hiKje71y8W8"
     }
 }
